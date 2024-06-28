@@ -19,20 +19,12 @@ body {
 }
 
 h1 {
-    font-size: 2.1em;
-    margin-bottom: 0em;
+    font-size: 3.0em;
+    margin-bottom: 1.0em;
     font-weight: bold;
     animation: rainbow 5s infinite;
     text-align: center; 
-    margin-left: 100px;
-}
-
-h2 {
-    font-size: 1.8em; 
-    color: #555;
-    margin-bottom: 0.8em;
-    text-align: center;
-    margin-left: 95px;
+    margin-left: 120px;
 }
 
 h3 {
@@ -54,21 +46,7 @@ h3 {
     100% { color: #8b00ff; }
 }
 
-.media-container {
-    background: #fff; 
-    padding: 30px; 
-    border-radius: 15px; 
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    max-width: 100%; 
-    width: 100%;
-    overflow: hidden; 
-}
-
-.video-container {
+.media-container, .video-container {
     background: #fff; 
     padding: 30px; 
     border-radius: 15px; 
@@ -139,11 +117,9 @@ input[type="range"] {
         font-size: 2.5em; 
     }
 
-    h2 {
-        font-size: 1.5em; 
-    }
     h3 {
-        font-size: 2.5;
+        font-size: 2.5em; 
+        margin-left: 0;
     }
 
     .controls {
@@ -206,6 +182,7 @@ input[type="range"] {
     margin-bottom: 10px; 
     background-color: #ffffff; 
     color: rgb(97, 95, 95); 
+    margin-left: 90px;
 }
 
 #openLetterBtn:hover {
