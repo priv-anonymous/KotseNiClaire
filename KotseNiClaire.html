@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1 data-text="HAPPY GRADUATION🥳🎉✨">HAPPY GRADUATION🥳🎉✨</h1>
+        <h2 style="text-align: center;">"KOTSE NI CLAIRE"</h2>
+        <button id="openLetterBtn">Open the Letter</button>
+        <div class="media-container">
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="rr.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="controls">
+                    <button id="playPauseBtn">Play/Pause</button>
+                    <button id="stopBtn">Stop</button>
+                    <input type="range" id="seekBar" value="0">
+                </div>
+            </div>
+            <img src="rr.jpg" alt="Image description" class="image">
+        </div>
+    </div>
+    <script src="videoPlayerScript.js"></script>
+</body>
+</html>
