@@ -1,76 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var backBtn = document.getElementById('backBtn');
-
-    backBtn.addEventListener('click', function() {
-       
-        window.location.href = 'kotseniClaire.html'; 
-    });
-
-
-
-document.getElementById('keyBtn').addEventListener('click', function() {
-    const keyElement = document.getElementById('key');
-    const popSound = document.getElementById('popSound');
-    const music = document.getElementById('music');
-    
-    keyElement.style.display = 'block';
-    keyElement.classList.remove('hidden'); 
-    keyElement.style.animation = 'floatUp 3s ease-in-out forwards';
-    
-    popSound.play(); 
-    music.play(); 
-    
-    startConfetti();
-});
-
-const confettiColors = ['#FFC107', '#E91E63', '#9C27B0', '#2196F3', '#4CAF50'];
-const confettiCanvas = document.getElementById('confettiCanvas');
-const ctx = confettiCanvas.getContext('2d');
-
-confettiCanvas.width = window.innerWidth;
-confettiCanvas.height = window.innerHeight;
-
-let confettiElements = [];
-
-function createConfetti() {
-    const confetti = {
-        x: Math.random() * confettiCanvas.width,
-        y: Math.random() * confettiCanvas.height - confettiCanvas.height,
-        size: Math.random() * 10 + 5,
-        color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
-        speed: Math.random() * 3 + 2,
-        angle: Math.random() * 360,
-        rotation: Math.random() * 360,
-        rotationSpeed: Math.random() * 10 - 5,
-    };
-    confettiElements.push(confetti);
-}
-
-function drawConfetti() {
-    ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
-    confettiElements.forEach((confetti, index) => {
-        ctx.fillStyle = confetti.color;
-        ctx.save();
-        ctx.translate(confetti.x, confetti.y);
-        ctx.rotate(confetti.angle * Math.PI / 180);
-        ctx.fillRect(-confetti.size / 2, -confetti.size / 2, confetti.size, confetti.size);
-        ctx.restore();
-
-        confetti.y += confetti.speed;
-        confetti.angle += confetti.rotationSpeed;
-
-        if (confetti.y > confettiCanvas.height) {
-            confettiElements.splice(index, 1);
-        }
-    });
-    requestAnimationFrame(drawConfetti);
-}
-
-function startConfetti() {
-    for (let i = 0; i < 200; i++) {
-        createConfetti();
-    }
-    drawConfetti();
-}
-
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <div class="letter-container">
+            <h3 style="text-align: center; margin-bottom: 10px; margin-top: auto;">CONGRATULATIONS!!</h3>
+            <div class="letter-content">
+                <p style="text-align: justify;">Dear Claire,</p>
+                <p style="text-align: justify;">Hii Claire, Congratulations!!🎓Nagustuhan mo ba yung gift ko sa'yo? HAHAHAHA sobrang mahal nun ah. So ayun na nga, gusto ko lang sabihin na ang galing mo talaga marketing head🙌 hindi chamba yang Latin Honors mo ah, talagang pinaghirapan mo yan. Alam mo, you've got a good heart, and it really shows sa lahat ng ginagawa mo. Imagine, inabot ka nang ilang dekada sa lm para hanapin yung 'the one' mo and finally, you found her. Seriously tho, you deserve all the happiness and blessings coming your way.</p>
+                <p>Btw, sorry again for my lie ha?🪻ayon lang. Proud of you👏 Goodluck sa next journey mo. Ingat ka palagi!!🫶🤍</p>
+                <p style="text-align: right; margin-top: 30px;">Peace out,</p>
+                <p style="text-align: right; margin-bottom: 10px; margin-top: auto;">Weyalin</p>
+            </div>
+            <div id="key" class="hidden">🔑</div>
+        </div>
+        
+        <button id="keyBtn">Get Your Key</button>
+        <a href="KotseNiClaire.html" id="backBtn">Back</a>
+    </div>
+    <canvas id="confettiCanvas"></canvas>
+    <audio id="popSound" src="pop.mp3"></audio> 
+    <audio id="music" src="music.mp3"></audio>
+    <script src="letterScript.js"></script>
+</body>
+</html>
