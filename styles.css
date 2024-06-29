@@ -1,11 +1,10 @@
-/* styles.css */
 
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 50vh;
     margin: 0;
     background-color: #8ba9d6;
     flex-direction: column;
